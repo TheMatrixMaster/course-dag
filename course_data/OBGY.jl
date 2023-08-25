@@ -1,1 +1,1 @@
-{"name": "OBGY 401 Obstetrics and Gynecology Clerkship (6 credits)", "term": "Fall 2020, Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/obgy-401", "subject": "OBGY"}
+{"name": "OBGY 401 Obstetrics and Gynecology Clerkship (6 credits)", "term": "Fall 2023, Winter 2024, Summer 2024", "link": "https://www.mcgill.ca/study/2023-2024/courses/obgy-401", "subject": "OBGY"}

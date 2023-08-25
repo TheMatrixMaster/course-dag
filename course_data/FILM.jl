@@ -1,1 +1,1 @@
-{"name": "FILM 499 Internship: World Cinemas (3 credits)", "term": "This course is not scheduled for the 2020-2021 academic year.", "link": "https://mcgill.ca/study/2020-2021/courses/film-499", "subject": "FILM"}
+{"name": "FILM 499 Internship: World Cinemas (3 credits)", "term": "Winter 2024", "link": "https://www.mcgill.ca/study/2023-2024/courses/film-499", "subject": "FILM"}

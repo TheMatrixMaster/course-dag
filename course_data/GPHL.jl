@@ -1,0 +1,2 @@
+{"name": "GPHL 200 Foundations in Population and Global Health (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/gphl-200", "subject": "GPHL"}
+{"name": "GPHL 201 Population and Global Health Ethics (3 credits)", "prereq": ["gphl-200"], "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/gphl-201", "subject": "GPHL"}

@@ -1,0 +1,2 @@
+{"name": "CHSS 201 Introduction to International Organizations (3 credits)", "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/chss-201", "subject": "CHSS"}
+{"name": "CHSS 202 Regulatory Mechanisms of International Organizations (3 credits)", "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/chss-202", "subject": "CHSS"}

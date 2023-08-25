@@ -1,7 +1,7 @@
-{"name": "BASC 449N2 Integrative Research Project (3 credits)", "prereq": ["basc-449n1"], "term": "This course is not scheduled for the 2020-2021 academic year.", "link": "https://mcgill.ca/study/2020-2021/courses/basc-449n2", "subject": "BASC"}
-{"name": "BASC 449N1 Integrative Research Project (3 credits)", "prereq": ["basc-201"], "term": "This course is not scheduled for the 2020-2021 academic year.", "link": "https://mcgill.ca/study/2020-2021/courses/basc-449n1", "subject": "BASC"}
-{"name": "BASC 449D2 Integrative Research Project (3 credits)", "prereq": ["basc-449d1"], "term": "Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/basc-449d2", "subject": "BASC"}
-{"name": "BASC 449D1 Integrative Research Project (3 credits)", "prereq": ["basc-201"], "term": "Fall 2020", "link": "https://mcgill.ca/study/2020-2021/courses/basc-449d1", "subject": "BASC"}
-{"name": "BASC 449 Integrative Research Project (6 credits)", "prereq": ["basc-201"], "term": "Fall 2020, Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/basc-449", "subject": "BASC"}
-{"name": "BASC 201 Arts & Science Integrative Topics (3 credits)", "term": "Fall 2020", "link": "https://mcgill.ca/study/2020-2021/courses/basc-201", "subject": "BASC"}
-{"name": "BASC 396 Undergraduate Research Project (3 credits)", "prereq": ["basc-201"], "term": "Fall 2020, Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/basc-396", "subject": "BASC"}
+{"name": "BASC 449N2 Integrative Research Project (3 credits)", "prereq": ["basc-449n1"], "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/basc-449n2", "subject": "BASC"}
+{"name": "BASC 449N1 Integrative Research Project (3 credits)", "prereq": ["basc-201"], "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/basc-449n1", "subject": "BASC"}
+{"name": "BASC 449D2 Integrative Research Project (3 credits)", "prereq": ["basc-449d1"], "term": "Winter 2024", "link": "https://www.mcgill.ca/study/2023-2024/courses/basc-449d2", "subject": "BASC"}
+{"name": "BASC 449 Integrative Research Project (6 credits)", "prereq": ["basc-201"], "term": "Fall 2023, Winter 2024", "link": "https://www.mcgill.ca/study/2023-2024/courses/basc-449", "subject": "BASC"}
+{"name": "BASC 449D1 Integrative Research Project (3 credits)", "prereq": ["basc-201"], "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/basc-449d1", "subject": "BASC"}
+{"name": "BASC 396 Undergraduate Research Project (3 credits)", "prereq": ["basc-201"], "term": "Fall 2023, Winter 2024", "link": "https://www.mcgill.ca/study/2023-2024/courses/basc-396", "subject": "BASC"}
+{"name": "BASC 201 Arts and Science Integrative Topics (3 credits)", "term": "Winter 2024", "link": "https://www.mcgill.ca/study/2023-2024/courses/basc-201", "subject": "BASC"}

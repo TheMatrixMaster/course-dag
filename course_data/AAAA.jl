@@ -1,1 +1,1 @@
-{"name": "AAAA 100", "term": "Fall 2020, Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/aaaa-100", "subject": "AAAA"}
+{"name": "AAAA 100", "term": "Fall 2023, Winter 2024", "link": "https://www.mcgill.ca/study/2023-2024/courses/aaaa-100", "subject": "AAAA"}

@@ -1,0 +1,11 @@
+{"name": "CSNM 690 Special Topics in Supply Networks (3 credits)", "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-690", "subject": "CSNM"}
+{"name": "CSNM 650 Integrated Supply Networks Field Project.\r (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-650", "subject": "CSNM"}
+{"name": "CSNM 630 Global Supply Management and International Logistics\r (3 credits)", "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-630", "subject": "CSNM"}
+{"name": "CSNM 635 ESG in Integrated Supply Networks (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-635", "subject": "CSNM"}
+{"name": "CSNM 632 Dynamic Supply Networks and Lean Operations\r Systems\r (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-632", "subject": "CSNM"}
+{"name": "CSNM 612 Dynamic Supply Networks Sourcing and Purchasing\r (3 credits)", "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-612", "subject": "CSNM"}
+{"name": "CSNM 620 Dynamic Supply Networks Data\r Analytics\r (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-620", "subject": "CSNM"}
+{"name": "CSNM 615 Integrated Production and\r Operations Management\r (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-615", "subject": "CSNM"}
+{"name": "CSNM 610 Principles of Dynamic Supply Networks (3 credits)", "prereq": ["cms2-500"], "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-610", "subject": "CSNM"}
+{"name": "CSNM 608 Dynamic Supply Networks\r Sustainability\r (3 credits)", "prereq": ["cms2-500"], "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-608", "subject": "CSNM"}
+{"name": "CSNM 605 Dynamic Supply Networks Transformation (3 credits)", "prereq": ["cms2-500"], "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/csnm-605", "subject": "CSNM"}

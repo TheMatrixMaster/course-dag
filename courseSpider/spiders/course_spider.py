@@ -4,8 +4,9 @@ from . import subject_data
 from ..items import CoursespiderItem, CourseItemLoader
 from scrapy.linkextractors import LinkExtractor
 
+
 allurls = subject_data.start(
-    f'https://mcgill.ca/study/2020-2021/courses/search').links
+    f'https://www.mcgill.ca/study/2023-2024/courses/search', save=True).links
 
 class CourseSpider(scrapy.Spider):
     name = 'courses'
@@ -25,7 +26,7 @@ class CourseSpider(scrapy.Spider):
         all_links = LinkExtractor(restrict_css=('.field-content a')).extract_links(response)
         
         # deal with each course individually
-        for link in all_links: 
+        for link in all_links:
             yield response.follow(link.url, meta={'start_url' : response.meta['start_url']}, callback=self.parse_course)
 
         # parsing the next page

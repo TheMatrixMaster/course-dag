@@ -1,1 +1,1 @@
-{"name": "EDFC 497 Individual Research Project (3 credits)", "term": "This course is not scheduled for the 2020-2021 academic year.", "link": "https://mcgill.ca/study/2020-2021/courses/edfc-497", "subject": "EDFC"}
+{"name": "EDFC 497 Individual Research Project (3 credits)", "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/edfc-497", "subject": "EDFC"}

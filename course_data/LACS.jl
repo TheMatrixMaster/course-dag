@@ -1,4 +1,4 @@
-{"name": "LACS 499 Internship: Latin America and Caribbean Studies (3 credits)", "term": "This course is not scheduled for the 2020-2021 academic year.", "link": "https://mcgill.ca/study/2020-2021/courses/lacs-499", "subject": "LACS"}
-{"name": "LACS 498 Honours Thesis (3 credits)", "prereq": ["lacs-497"], "term": "Fall 2020, Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/lacs-498", "subject": "LACS"}
-{"name": "LACS 497 Research Seminar: Latin America and the Caribbean (3 credits)", "term": "Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/lacs-497", "subject": "LACS"}
-{"name": "LACS 480 Latin American and Caribbean Studies Reading Course (3 credits)", "term": "Fall 2020, Winter 2021", "link": "https://mcgill.ca/study/2020-2021/courses/lacs-480", "subject": "LACS"}
+{"name": "LACS 499 Internship: Latin America and Caribbean Studies (3 credits)", "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/lacs-499", "subject": "LACS"}
+{"name": "LACS 498 Honours Thesis (3 credits)", "prereq": ["lacs-497"], "term": "This course is not scheduled for the 2023-2024 academic year.", "link": "https://www.mcgill.ca/study/2023-2024/courses/lacs-498", "subject": "LACS"}
+{"name": "LACS 480 Latin American and Caribbean Studies Reading Course (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/lacs-480", "subject": "LACS"}
+{"name": "LACS 497 Research Seminar: Latin America and the Caribbean (3 credits)", "term": "Fall 2023", "link": "https://www.mcgill.ca/study/2023-2024/courses/lacs-497", "subject": "LACS"}
