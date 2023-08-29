@@ -1,24 +1,27 @@
 from pathlib import Path
 from graph_generator import graph
-from datetime import date
 
-import networkx as nx
-import plotly.graph_objs as go
+import os
+import csv
+import urllib
+
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 import dash_core_components as dcc
 import dash_cytoscape as cyto
 import dash
 from dash.dependencies import Input, Output, State
-import re
-import csv
 
 
-app = dash.Dash(__name__, external_stylesheets=[
-                dbc.themes.CYBORG, "https://use.fontawesome.com/releases/v5.7.0/css/all.css"])
+app = dash.Dash(
+    __name__,
+    external_stylesheets=[dbc.themes.CYBORG, "https://use.fontawesome.com/releases/v5.7.0/css/all.css"]
+)
+
 app.config.suppress_callback_exceptions = True
 app.scripts.config.serve_locally=True
 server = app.server
+
 def get_list(file):
     with open(file, 'r') as f:
         reader = csv.reader(f)
@@ -87,6 +90,18 @@ message_display2 = html.Div(
         )]
 )
 
+message_display3 = html.Div(
+    [
+        dbc.Modal(
+            [
+                dbc.ModalHeader("You can use the URL to share this page"),
+                dbc.ModalBody(id='message_body3'),
+            ],
+            id="message3",
+            is_open=False
+        )]
+)
+
 
 dropdown_item_options = [{'label': n, 'value': c}
                          for (n, c) in zip(NAMES, CODES)]
@@ -117,8 +132,8 @@ course_input_box = dbc.FormGroup(
             dbc.Input(
                 id='course_input',
                 type='text',
-                placeholder='e.g. COMP 202',
-                value='comp 302',
+                placeholder='e.g. COMP 302',
+                value='comp302',
             ),
             dbc.InputGroupAddon(
                 dbc.Button(
@@ -139,6 +154,15 @@ course_input_fade = dbc.Fade(
     id='course_fade',
     is_in=True,
     appear=True
+)
+
+course_share_btn = dbc.Button(
+    "Share",
+    id="share-btn",
+    color="primary",
+    size="lg",
+    n_clicks=0,
+    style={'position': 'fixed', 'bottom': '3rem', 'right': '2rem'},
 )
 
 # Stylesheets for Cytoscape graphs
@@ -261,7 +285,7 @@ course_path_graph=cyto.Cytoscape(
     minZoom= 0.3,
     maxZoom= 1.5,
     stylesheet=course_path_stylesheet,
-    elements=graph.get_elements(graph.learning_path('comp 302', graph.dfs_tree))
+    elements=[]
 )
 
 mini_map = cyto.Cytoscape(
@@ -276,7 +300,7 @@ mini_map = cyto.Cytoscape(
     minZoom=0.5,
     maxZoom=1.5,
     stylesheet=minimap_stylesheet,
-    elements=graph.get_elements(graph.learning_path('comp 202', graph.bfs_tree))
+    elements=graph.get_elements(graph.learning_path('comp202', graph.bfs_tree))
 )
 
 guide_content=dcc.Markdown(
@@ -297,15 +321,18 @@ guide_content=dcc.Markdown(
     """
 )
 
-
-starlink = html.A(" Star", href="https://github.com/Deerhound579/mcgill-course-map",
+creatorlink = html.A(f"© Created by Sixian Li", href="https://github.com/atsixian",
+                     target="_blank", style={'color': 'black'}, id="creator")
+maintainerlink = html.A(f"Maintained by Stephen Lu", href="https://github.com/TheMatrixMaster", 
+                     target="_blank", style={'color': 'black'}, id="maintainer")
+starlink = html.A(" Star", href="https://github.com/atsixian/mcgill-course-map",
                   target='_blank', style={'color': 'black'}, id='star')
-issueslink = html.A(" Issues", href="https://github.com/Deerhound579/mcgill-course-map/issues",
+issueslink = html.A(" Issues", href="https://github.com/atsixian/mcgill-course-map/issues",
                     target='_blank', style={'color': 'black'}, id='issues')
 
 minimap_content = [
     dbc.CardHeader(html.A('COMP 202 Foundations of Programming (3 credits)', id='minimap_header',
-                          href='https://www.mcgill.ca/study/2019-2020/courses/comp-202', style={'color': 'white'}, target='_blank'),
+                          href='https://www.mcgill.ca/study/2023-2024/courses/comp-202', style={'color': 'white'}, target='_blank'),
                           ),
     dbc.CardBody(
         [
@@ -317,7 +344,10 @@ minimap_content = [
 external_icon = html.I(className="fas fa-external-link-alt", style={})
 course_info = html.A("COMP 302 Programming Languages and Paradigms (3 credits)")
 course_info_panel=[
-    dbc.CardHeader(html.A([external_icon, course_info],target='_blank', id='course_info_title', href='https://www.mcgill.ca/study/2019-2020/courses/comp-302', style={'color': 'white'})),
+    dbc.CardHeader(html.A([
+        external_icon, course_info],target='_blank', id='course_info_title', 
+        href='https://www.mcgill.ca/study/2023-2024/courses/comp-302', style={'color': 'white'})
+    ),
     dbc.CardBody(graph.get_term(), id='course_info_body')
 ]
 
@@ -393,8 +423,9 @@ navbar = dbc.NavbarSimple(
         message_display,
         message_display1,
         message_display2,
-        dbc.NavLink(f"© {date.today().year} Sixian Li", href="mailto:lisixian579@gmail.com", style={
-                    'color': 'black'}),
+        message_display3,
+        dbc.NavLink(creatorlink),
+        dbc.NavLink(maintainerlink),
         dbc.NavLink([html.I(className='fab fa-github'), starlink],
                     style={'color': 'black'}),
         dbc.NavLink([html.I(className='fas fa-bug'), issueslink],
@@ -439,15 +470,19 @@ body = dbc.Container(
                     md=8
                 ),
             ]
-        )
+        ),
+        course_share_btn
     ],
     className="md-12",
 )
 
 app.title = 'McGill Course Map'
-app.layout = html.Div([navbar, body])
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    navbar,
+    body
+])
 error_message = "Please double check.\nIf you're sure it exists, or you've found an invalid course, create an issue on GitHub or contact me by email(click my name on the navigation bar)."
-
 
 # !callbacks
 @app.callback(
@@ -482,6 +517,23 @@ def update_overview(subject):
 
 @app.callback(
     [
+        Output('message3', 'is_open'),
+        Output('message_body3', 'children'),
+    ],
+    [Input('share-btn', 'n_clicks')],
+    [State('course_input', 'value')],
+)
+def get_shareable_url(n, course):
+    if n:
+        course = course.replace(' ', '')
+        return True, f"{os.environ['APP_URL']}/?course={course}"
+    else:
+        return False, ''
+
+
+@app.callback(
+    [
+        Output('course_input', 'value'),
         Output('course_path_graph', 'elements'),
         Output('message', 'is_open'),
         Output('message_body', 'children'),
@@ -489,8 +541,9 @@ def update_overview(subject):
     ],
     [
         Input('submit_button', 'n_clicks'), # user clicks 'GO'
-        Input('course_input', 'n_submit'),   # user presss 'Enter'
-        Input('filter_list', 'value')
+        Input('course_input', 'n_submit'),   # user presses 'Enter'
+        Input('filter_list', 'value'),
+        Input('url', 'search')
     ],
     [
         State('course_input', 'value'),
@@ -498,21 +551,27 @@ def update_overview(subject):
         State('filter_list', 'options')
     ]
 )
-def update_course(n, sub, filters, course, cur_options):
+def update_course(n, sub, filters, search, course, cur_options):    
     ctx = dash.callback_context
+    params = urllib.parse.parse_qs(search[1:])
+
     if ctx.triggered:
         latest_trigger_id = ctx.triggered[0]['prop_id'].split('.')[0]
         try:
+            if latest_trigger_id == 'url' and 'course' in params:
+                course = params['course'][0]
+
             new_graph = graph.learning_path(course, graph.dfs_tree)
+
             if latest_trigger_id == 'filter_list': # If filter value changes, we change the current graph without recalculating subjects
-                return graph.get_elements(new_graph, set(filters)), False, '', cur_options
+                return course, graph.get_elements(new_graph, set(filters)), False, '', cur_options
             
             new_subjects = graph.subjects_in_graph(new_graph)
             options_list = [{'label': sub, 'value': sub} for sub in new_subjects]
 
-            return graph.get_elements(new_graph), False, ' ', options_list
+            return course, graph.get_elements(new_graph), False, ' ', options_list
         except Exception as e:
-            return [], True, f"There's no course called {course}. "+error_message, cur_options
+            return course, [], True, f"There's no course called {course}. "+error_message, cur_options
 
 
 @app.callback(
@@ -570,7 +629,7 @@ def update_course_info_panel(node, cur_title, cur_href, cur_term):
     ]
 )
 def update_layout(cur_lay):
-    return {'name':cur_lay}
+    return {'name': cur_lay}
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False, host="0.0.0.0", port=8050, use_reloader=False)
